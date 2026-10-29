@@ -1,0 +1,293 @@
+* {
+    /* include the padding with height with the padding */
+    box-sizing: border-box;   
+}
+
+
+/*                                  Bodies                                   */
+
+
+body {
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: palegoldenrod;
+    color: rgb(83, 167, 170);
+}
+
+.home-page {
+    /* this styles are specifically for the home page */
+
+    /* centering the values */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    background-image: url(./images/jeopardy.jpg);
+    /* make the background cover the whole page */
+    background-size: cover;
+    background-position: center;
+    /* don't repeat the background */
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.game-page {
+    padding: 0 20%;
+}
+
+.about-page {
+    /* locate the information in the middle */
+    margin: 0 20%;
+    padding: 0.5rem 1rem;
+}
+
+
+/*                                  Elements                                     */
+
+
+.home-page h1 {
+    color: #0d2241;
+}
+
+h1 {
+    font-size: 5rem;
+    width: 100%;
+    text-align: center;
+    /* if the text over flows, wrap it up */
+    word-wrap: break-word;
+}
+
+
+h2 {
+    font-size: 3rem;
+    
+}
+
+p, ul {
+    color: brown;
+    font-size: 1.5rem;
+    font-family:'Times New Roman', Times, serif;
+}
+
+a {
+    /* have spaces between elements */
+    padding: 0.5rem;
+}
+
+
+/*                                  Classes and IDs                                  */
+
+
+.link-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.link-buttons button {
+    /* for the buttons in the home page */   
+    
+    padding: 1.5rem 5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    background: rgba(12, 27, 51, 0.65);
+    color: rgb(212, 181, 7);
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    /* how the changes show when an effect happens
+    for all changes, duirng 0.2 second, make the changes: slowly, speed up, then slow down */
+    transition: all 0.2s ease;
+}
+
+#external-link {
+    padding: 1.5rem 2rem;
+}
+
+.link-buttons button:hover {
+    /* when the user hvoers shift the button higher, make it a little bigger, and slightly change the color */
+    background-color: rgba(4, 14, 31, 0.65);
+    transform: translateY(-0.3rem);
+    box-shadow: 0px 6px 15px rgba(75, 44, 32, 0.4);
+}
+
+.indent {
+    text-indent: 1.5rem;
+}
+
+.game-buttons {
+    margin: 1rem;
+    display: flex;
+    /* make the first button on the far left and the second one on the far right */
+    justify-content: space-between;
+}
+
+.game-buttons button {
+    margin: 3px;
+    background-color: darkcyan;
+    color: blanchedalmond;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    /* when the user hovers, change the cursor to show as pointer */
+    cursor: pointer;
+    box-shadow: 0 6px 0 cadetblue;
+    /* how the changes show when an effect happens
+    for all changes, duirng 0.1 second, make the changes: slowly, speed up, then slow down */
+    transition: all 0.1s ease;
+}
+
+/* when the user hovers */
+.game-buttons button:hover {
+    background-color: #1883cb;
+    box-shadow: 0 2px 0 #1d4ed8;
+}
+
+/* when the buttons is active */
+.game-buttons button:active {
+    transform: translateY(4px);
+}
+
+#restart {
+    justify-content: flex-end;
+}
+
+.table-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.table {
+    margin: 0 0.5rem;
+    /* make the two border lines of two cells next to each others one line */
+    border-collapse: collapse;
+    table-layout: auto; 
+    width: auto;
+    max-width: 100%;
+}
+
+.table td {
+    border: rgb(83, 167, 170) solid 0.1rem;
+    color: brown;
+    padding: 2rem 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    white-space: normal;
+    word-break: keep-all;  
+}
+
+.table td:hover {
+    background-color: rgb(83, 167, 170);
+}
+
+/* this calss will apply on the cells when they get filled with info */
+.filled  td{
+    background-color: rgba(0, 128, 0,0.4);
+    font-weight: 400;
+}
+
+.loading-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+#loading {
+    margin: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border: 5px solid rgba(146, 134, 110, 0.741);
+    border-top: 5px solid rgba(10, 43, 95, 0.591); 
+    border-radius: 50%; 
+
+    /* runs for 0.8 second, keeps going forever, smooth speed */
+    animation: spin 0.8s linear infinite; 
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#loading.isLoading {
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg); 
+   }
+}
+
+
+@media (max-width: 1800px) {
+    /* make the font larger if the screen is larger than 1400 */
+    html {font-size: 112.5%;}
+}
+
+@media (max-width: 1400px) {
+    /* scale down the defual font size to 15 --> (15/16) */
+    html{font-size: 93.75%;}
+}
+
+@media (max-width: 800px) {
+    /* scale down the defual font size to 14 --> (14/16) */
+    html{font-size: 88.5%;}
+    
+    .link-buttons button {
+        padding: 1.5rem 2.5rem;
+    }
+}
+
+@media (max-width: 660px) {
+    .table td{padding: 1.5rem;}
+}
+
+@media (max-width: 550px) {
+    /* scale down the defual font size to 13 --> (13/16) */
+    html{font-size: 81.25%;}
+
+    .link-buttons button {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .about-page {
+        margin: 0 10%;
+        padding: 0.5rem 0.4rem;
+    }
+
+    .game-page {
+        padding: 0 4%;
+    }
+    
+    .table td{ 
+        padding: 1rem 0.2rem; 
+        font-size: 0.85rem; 
+    }
+
+    h1 {font-size: 4rem;}
+    h2 {font-size: 2rem;}
+    p {font-size: 1rem;}
+}
+
+@media (max-width: 380px) {
+    .game-page {
+        padding: 0 1%;      
+    }
+    .table td {
+        padding: 1rem 0.6rem;
+        min-width: 55px;    
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Jeopardy</title>
+</head>
+<body class="game-page">
+    <main>
+
+        <h1><i>Jeopardy</i></h1>
+
+        <div>
+            <form class="game-buttons" type="submit">
+                <button type="button" id="start-game">Start Game</button>
+                <button type="button" id="restart">Restart</button>
+            </form>
+        </div>
+
+        <div class="loading-div">
+            <div id="loading" aria-label="loading" arial-hidden="true"></div>
+        </div>
+
+        <div class="table-cont">
+            <table class="table">
+                <thead>
+                    <tr id="t-header">
+                        <!-- headers will be here -->
+                    </tr>
+                </thead>
+                <tbody id="t-body">
+                    <!-- table rows and data will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>
