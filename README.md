@@ -2,6 +2,8 @@
 
 On this game, there are different categories each with different levels. When you click the box reveals the question, when you click the second time, it reveals the answer.
 
+See the game live: https://abu-aljod.github.io/jeopardy-game/
+
 
 # What the user sees
 
